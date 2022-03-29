@@ -32,13 +32,13 @@ function getMonsterList(){
                         </div>
                     `;
                 });
-//         //     monsterList.classList.remove('notFound');
-//         // }else{
-//         //     html = "Sorry, we didn't find anything :<";
-//         //     monsterList.classList.add('notFound');
+                monsterList.classList.remove('notFound');
+                }else{
+                    html = "Sorry, we didn't find anything :<";
+                    monsterList.classList.add('notFound');
           }
 
-//         // monsterList.innerHTML = html;
+        monsterList.innerHTML = html;
      });
  };
 
