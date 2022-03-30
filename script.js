@@ -20,13 +20,13 @@ function getMonsterList(){
             let html = "";
             if(data.monsters){
                 data.monsters.forEach(monster => {
-                    html +-`
-                        <div class="monster-card" data-id = "${monster.idMonster}>
+                    html +=`
+                        <div class="monster-card" data-id = "${monster.index}>
                             <div class="monster-img">
-                                 <img src = "${monster.strMonsterThumb}" alt="monster">
+                                 <img src = "http://placehold.jp/150x150.png" alt="monster">
                             </div>
                             <div class="monster-name">
-                                <h3>${monster.strMonster}</h3>
+                                <h3>${monster.name}</h3>
                                 <a href="#" class="monster-btn">Get Stats</a>
                             </div>
                         </div>
@@ -45,7 +45,7 @@ function getMonsterList(){
 //get stats of monster
 
 function getMonsterStats(e){
-    alert("monsterItem");
+    alert("index");
     e.preventDefault();
     if(e.target.classList.contains('monster-btn')){
         let monsterItem = e.target.parentElement;
@@ -68,7 +68,7 @@ function monsterStatsModal(monster){
             <h2 class = "monster-title">${monster.strMonster}</h2>
             <p class="monster-type">${monster.strType}</p>
         <div class="monster-stats-img">
-            <img src="${monster.strMonsterThumb}" alt="">
+            <img src="http://placehold.jp/400x400.png" alt="">
         </div>
         <div class="monster-stats">
             <h3>Stats</h3>
