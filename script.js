@@ -21,7 +21,7 @@ function getMonsterList(){
             if(data.results){
                 data.results.forEach(results => {
                     html +=`
-                        <div class="monster-card" data-id = "${results.index}>
+                        <div class="monster-card" data-id = "${results.index}">
                             <div class="monster-img">
                                  <img src = "http://placehold.jp/150x150.png" alt="monster">
                             </div>
