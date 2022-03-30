@@ -16,7 +16,7 @@ function getMonsterList(){
     fetch(`https://www.dnd5eapi.co/api/monsters/${searchInputTxt}`)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+         console.log(data);
             let html = "";
             if(data.monsters){
                 data.monsters.forEach(monster => {
