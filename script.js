@@ -43,36 +43,35 @@ function getMonsterList(){
  };
 
 //get stats of monster
-
 function getMonsterStats(e){
     alert("index");
     e.preventDefault();
     if(e.target.classList.contains('monster-btn')){
-        let monsterItem = e.target.parentElement;
-        fetch(`https://www.dnd5eapi.co/api/monsters/${monsterItem}`)
+        let index = e.target.parentElement;
+        fetch(`https://www.dnd5eapi.co/api/monsters/${index}`)
         .then(response => response.json())
-        .then(data => console.log(data.monster));
-        // fetch(`https://www.dnd5eapi.co/api/${monsterItem.dataset.id}`)
-        // .then(response => response.json())
-        // .then(data => monsterStatsModal(data.monsters));
-        //console.log(monsterItem);
+        .then(data => console.log(data.results));
     }
-    //console.log(e.target);
+    console.log(e.target);
 }
 
 //create modal
-function monsterStatsModal(monster){
+function monsterStatsModal(index){
     //console.log(monster);
-    monster = monster[0];
+    index = index[0];
     let html = `
-            <h2 class = "monster-title">${monster.name}</h2>
-            <p class="monster-type">${monster.type}</p>
+            <h2 class = "monster-title">${index.name}</h2>
+            <p class="monster-type">${index.type}</p>
         <div class="monster-stats-img">
             <img src="http://placehold.jp/400x400.png" alt="">
         </div>
         <div class="monster-stats">
             <h3>Stats</h3>
-            <p>${monster.strStats}</p>
+            <p>${index.subtype}</p>
+            <p>${index.size}</p>
+            <p>${index.alignment}</p>
+            <p>${index.armor_class}</p>
+            <p>${index.hit_points}</p>
         </div>
 
         <div class="monster-link">
