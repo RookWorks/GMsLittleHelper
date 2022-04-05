@@ -45,9 +45,9 @@ body{
     max-width: 1280px;
     margin: 0 auto;
     padding:2rem;
-    background: #8d99ae;
+    background: #dfc195;
     text-align: center;
-    box-shadow: 0 0 100px 150px #8d99ae;
+    box-shadow: 0 0 100px 150px #dfc195;
 }
 
 .monster-search h2{
@@ -154,6 +154,7 @@ body{
 .monster-name h3{
     margin-top: -30px;
     font-size: 24pt;
+    color:#fff;
 }
 
 .monster-btn{
