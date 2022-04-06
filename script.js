@@ -75,11 +75,36 @@ function monsterStatsModal(index){
         </div>
         <div class="monster-stats">
             <h3>Stats</h3>
-            <p alt="...">${index.subtype}</p>
+            <p>${index.subtype}</p>
             <p>Size: ${index.size}</p>
             <p>Alignment: ${index.alignment}</p>
             <p>AC: ${index.armor_class}</p>
             <p>HP: ${index.hit_points}</p>
+            <p>Speed: ${index.speed.walk} walking, ${index.speed.swim} swimming, ${index.speed.fly} flying</p>
+            <p>Strength: ${index.strength} | Dexterity: ${index.dexterity} | Constitution: ${index.constitution} | Intelligence: ${index.intelligence} | Wisdom: ${index.wisdom} | Charisma: ${index.charisma}</p>
+            <p>Proficiencies: ${index.proficiencies[0].proficiency.name}: ${index.proficiencies[0].value} | ${index.proficiencies[1].proficiency.name}: ${index.proficiencies[1].value} 
+            <p>${index.proficiencies[2].proficiency.name}: ${index.proficiencies[2].value} | ${index.proficiencies[3].proficiency.name}: ${index.proficiencies[3].value}
+            <p>${index.proficiencies[4].proficiency.name}: ${index.proficiencies[4].value} | ${index.proficiencies[5].proficiency.name}: ${index.proficiencies[5].value}</p>
+            <p>Vulnerabilities: ${index.damage_vulnerabilities}</p>
+            <p>Resistances: ${index.damage_resistances}</p>
+            <p>Damage Immunities: ${index.damage_immunities}</p>
+            <p>Condition Immunities: ${index.condition_immunities}</p>
+            <p>Senses: ${index.senses.darkvision} darkvision</p>
+            <p>Passive perception ${index.senses.passive_perception}</p>
+            <p>Languages: ${index.languages}</p>
+            <p>CR: ${index.challenge_rating}</p>
+            <p>XP: ${index.xp}</p>
+            <p>Special abilities: ${index.special_abilities[0].name}: ${index.special_abilities[0].desc}
+            ${index.special_abilities[1].name}: ${index.special_abilities[1].desc}</p>
+            <p>Actions: <li>${index.actions[0].name}: ${index.actions[0].desc}
+            <li>${index.actions[1].name}: ${index.actions[1].desc}
+            <li>${index.actions[2].name}: ${index.actions[2].desc}
+            <li>${index.actions[3].name}: ${index.actions[3].desc}
+            </p>
+            <p>Legendary Actions: <li>${index.legendary_actions[0].name}: ${index.legendary_actions[0].desc}
+            <li>${index.legendary_actions[1].name}: ${index.legendary_actions[1].desc}
+            <li>${index.legendary_actions[2].name}: ${index.legendary_actions[2].desc}
+            </p>
         </div>
 
         <div class="monster-link">
