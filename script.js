@@ -1,3 +1,4 @@
+//DOM stuff
 const searchBtn = document.getElementById('search-btn');
 const monsterList = document.getElementById('monster');
 const monsterDetailsContent = document.querySelector('.monster-details-content');
@@ -13,10 +14,9 @@ monsterCloseBtn.addEventListener('click', () => {
     monsterDetailsContent.parentElement.classList.remove('showStats');
 });
 
-window.onclick = function(event) {
-console.log("I'm clicking");
-
-};
+// window.onclick = function(event) {
+// console.log("I'm clicking");
+// };
 
 //get monster list that matches with tags
 function getMonsterList(){
@@ -67,6 +67,7 @@ function monsterStatsModal(index){
     monsterDetails.style.display = "block";
     monsterDetailsContent.parentElement.classList.add('showStats');
     console.log(index);
+    //Drilling down into the api. Each . represents one "directory" down but any number must be [] in order to be correctly read.
     let html = `
         <h2 class = "monster-title">${index.name}</h2>
         <p class="monster-type">${index.type}</p>
@@ -82,9 +83,12 @@ function monsterStatsModal(index){
             <p>HP: ${index.hit_points}</p>
             <p>Speed: ${index.speed.walk} walking, ${index.speed.swim} swimming, ${index.speed.fly} flying</p>
             <p>Strength: ${index.strength} | Dexterity: ${index.dexterity} | Constitution: ${index.constitution} | Intelligence: ${index.intelligence} | Wisdom: ${index.wisdom} | Charisma: ${index.charisma}</p>
-            <p>Proficiencies: ${index.proficiencies[0].proficiency.name}: ${index.proficiencies[0].value} | ${index.proficiencies[1].proficiency.name}: ${index.proficiencies[1].value} 
-            <p>${index.proficiencies[2].proficiency.name}: ${index.proficiencies[2].value} | ${index.proficiencies[3].proficiency.name}: ${index.proficiencies[3].value}
-            <p>${index.proficiencies[4].proficiency.name}: ${index.proficiencies[4].value} | ${index.proficiencies[5].proficiency.name}: ${index.proficiencies[5].value}</p>
+            <p>Proficiencies: ${index.proficiencies[0].proficiency.name}: ${index.proficiencies[0].value} | 
+            ${index.proficiencies[1].proficiency.name}: ${index.proficiencies[1].value} 
+            <p>${index.proficiencies[2].proficiency.name}: ${index.proficiencies[2].value} | 
+            ${index.proficiencies[3].proficiency.name}: ${index.proficiencies[3].value}
+            <p>${index.proficiencies[4].proficiency.name}: ${index.proficiencies[4].value} | 
+            ${index.proficiencies[5].proficiency.name}: ${index.proficiencies[5].value}</p>
             <p>Vulnerabilities: ${index.damage_vulnerabilities}</p>
             <p>Resistances: ${index.damage_resistances}</p>
             <p>Damage Immunities: ${index.damage_immunities}</p>
@@ -115,7 +119,7 @@ function monsterStatsModal(index){
     monsterDetailsContent.parentElement.classList.add('showStats');
     console.log(monsterDetailsContent);
 }
-
+//Close modal
 monsterDetails.addEventListener("click", closeModal);
 
 function closeModal() {
@@ -123,26 +127,26 @@ function closeModal() {
     console.log("I'm clicked");
 };
 
-  //monster place holder images
-  const images = [
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/aberration.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/beast.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/celestial.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/construct.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/dragon.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/elemental.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/fey.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/fiend.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/giant.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/humanoid.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/monstrosity.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/ooze.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/plant.jpg",
-      "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/undead.jpg"
-  ];
+//monster place holder images
+ const images = [
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/aberration.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/beast.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/celestial.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/construct.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/dragon.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/elemental.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/fey.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/fiend.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/giant.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/humanoid.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/monstrosity.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/ooze.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/plant.jpg",
+    "https://www.dndbeyond.com/content/1-0-1920-0/skins/waterdeep/images/icons/monsters/undead.jpg"
+];
 
 
-  function fillImage (images) {
+function fillImage (images) {
     const randIndex = Math.floor(Math.random() * images.length);
     imageInput.src = images[randIndex];
-  };
+};
